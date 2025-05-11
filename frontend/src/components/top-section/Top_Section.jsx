@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaRupeeSign, FaClock, FaHeadset, FaShieldAlt } from "react-icons/fa";
-import "./Top_Section.css";
+import "./Top_section.css";
 import { Link } from "react-router-dom";
 
 const TopSection = () => {
