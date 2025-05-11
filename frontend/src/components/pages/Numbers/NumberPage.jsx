@@ -83,8 +83,26 @@ function NumberPage() {
     return !!selectedNumbers[`${number}-${section}`];
   };
 
-  return (
+  useEffect(() => {
+  const addGlowEffect = () => {
+    const cells = document.querySelectorAll('.number-cell');
+    cells.forEach(cell => {
+      cell.addEventListener('mouseover', () => {
+        cell.style.transform = 'scale(1.1) translateY(-5px)';
+        cell.style.boxShadow = '0 10px 20px rgba(0, 243, 255, 0.4)';
+      });
+      cell.addEventListener('mouseout', () => {
+        cell.style.transform = 'scale(1) translateY(0)';
+        cell.style.boxShadow = 'none';
+      });
+    });
+  };
+  addGlowEffect();
+}, []);
+
+return (
     <div className="num-container">
+  <div className="cyber-glitch"></div>
       <h1>SATTA KING NUMBER SELECTION</h1>
       
       <div className="section-tabs">
