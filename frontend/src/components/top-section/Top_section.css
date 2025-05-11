@@ -152,10 +152,67 @@
   font-weight: 600;
 }
 
+.feature-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--neon-blue);
+  border-radius: 15px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(0, 243, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: cardShine 3s infinite;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: var(--neon-blue);
+  margin-bottom: 1rem;
+  animation: iconPulse 2s infinite;
+}
+
+.feature-card h3 {
+  color: var(--gold);
+  font-family: 'Orbitron', sans-serif;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
 .feature-card p {
   color: #ddd;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-bottom: 0;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+@keyframes cardShine {
+  0% { transform: rotate(45deg) translateY(-100%); }
+  100% { transform: rotate(45deg) translateY(100%); }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .feature-glow {
