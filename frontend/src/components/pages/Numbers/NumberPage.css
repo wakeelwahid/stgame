@@ -6,6 +6,28 @@
   --light: #f4f4f4;
   --danger: #f44336;
   --bg-dark: #1a1a1a;
+  --neon-blue: #00f3ff;
+  --neon-purple: #a020f0;
+  --neon-pink: #ff1493;
+}
+
+/* Game Background Animation */
+.num-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  z-index: -1;
+  animation: backgroundPulse 8s ease infinite;
+}
+
+@keyframes backgroundPulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
 }
 
 * {
@@ -90,12 +112,62 @@ h1 {
 
 .number-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  gap: 12px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: gridFadeIn 0.5s ease-out;
+}
+
+@keyframes gridFadeIn {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.number-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: rgba(0, 243, 255, 0.1);
+  border: 2px solid rgba(0, 243, 255, 0.3);
   border-radius: 15px;
-  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.number-cell:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: var(--neon-blue);
+  box-shadow: 0 10px 25px rgba(0, 243, 255, 0.4);
+  background: rgba(0, 243, 255, 0.2);
+}
+
+.number-cell.selected {
+  background: var(--neon-blue);
+  color: #000;
+  animation: selectedPulse 2s infinite;
+}
+
+@keyframes selectedPulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 243, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 243, 255, 0); }
 }
 
 .number-cell {
@@ -134,10 +206,72 @@ h1 {
 
 .controls {
   margin-top: 30px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: controlsFadeIn 0.5s ease-out 0.2s backwards;
+}
+
+@keyframes controlsFadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 15px;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.6s;
+}
+
+.btn:hover::before {
+  animation: btnShine 1.5s infinite;
+}
+
+@keyframes btnShine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.btn-danger {
+  background: linear-gradient(45deg, var(--neon-pink), var(--danger));
 }
 
 .control-group {
