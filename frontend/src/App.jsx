@@ -35,6 +35,7 @@ function App() {
       <Router>
         <div className="App">
           <GameAnimations />
+          <Header />
 
           <Routes>
             <Route path="/" element={<Boxes />} />
