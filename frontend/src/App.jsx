@@ -14,6 +14,7 @@ import RefundPolicy from "./components/pages/RefundPolicy/RefundPolicy";
 import TransactionsPage from "./components/pages/Transactions/Transactions";
 import GameHistory from "./components/pages/GameHistory/GameHistory";
 import TermsConditions from "./components/pages/TermsConditions/TermsConditions";
+import GameRules from "./components/pages/GameRules/GameRules";
 import AddChips from "./components/pages/WalletPage/Add-withdraw/AddChips";
 import WithdrawChips from "./components/pages/WalletPage/Add-withdraw/WithdrawChips";
 import PaymentPage from "./components/pages/WalletPage/Payment/PaymentPage";
@@ -65,6 +66,7 @@ function App() {
             />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/game-rules" element={<GameRules />} />
           </Routes>
 
           <Footer />

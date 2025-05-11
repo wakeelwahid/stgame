@@ -116,9 +116,9 @@ const Header = () => {
       )}
 
       <div className="rules-btn-container">
-        <button className="rules-button">
+        <Link to="/game-rules" className="rules-button">
           <i className="fas fa-scroll"></i> Game Rules
-        </button>
+        </Link>
         <Link to="/mychips" className="rules-button">
           <i className="fas fa-dice"></i> MY BETS
         </Link>
