@@ -7,14 +7,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Ignore node_modules but include everything else
 node_modules
-dist
-dist-ssr
+
+# Ignore dist folder only if it's not required
+# dist
+# dist-ssr
+
 *.local
 
 # Editor directories and files
+# Ignore .vscode but allow extensions.json
 .vscode/*
 !.vscode/extensions.json
+
+# Ignore IDE-specific files
 .idea
 .DS_Store
 *.suo
