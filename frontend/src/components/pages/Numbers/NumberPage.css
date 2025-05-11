@@ -444,20 +444,18 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(26, 26, 26, 0.98);
-  padding: clamp(15px, 4vw, 30px);
-  border-radius: clamp(10px, 2vw, 20px);
+  padding: clamp(20px, 5vw, 40px);
+  border-radius: clamp(12px, 2.5vw, 25px);
   z-index: 9999;
-  width: min(90%, 400px);
+  width: clamp(280px, 85vw, 550px);
   border: 2px solid var(--neon-blue);
-  box-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.4);
   backdrop-filter: blur(10px);
   animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 2vw, 20px);
-  min-width: 280px;
+  gap: clamp(15px, 3vw, 25px);
   isolation: isolate;
-  margin: auto;
 }
 
 .overlay {
@@ -537,9 +535,10 @@ h1 {
 
 .amount-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: clamp(8px, 1.5vw, 15px);
-  margin: clamp(10px, 3vw, 25px) 0;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(70px, 15vw, 120px), 1fr));
+  gap: clamp(10px, 2vw, 20px);
+  margin: clamp(15px, 4vw, 30px) 0;
+  width: 100%;
 }
 
 .amount-btn {
