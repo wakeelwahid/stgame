@@ -443,8 +443,9 @@ h1 {
 
 .amount-popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 25%;
+  left: 37%;
+
   transform: translate(-50%, -50%);
   background: rgba(26, 26, 26, 0.98);
   padding: clamp(15px, 4vw, 30px);
@@ -458,9 +459,9 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: clamp(10px, 2vw, 20px);
-  min-width: min(280px, 90vw);
-  max-width: 95vw;
+  min-width: 280px;
   isolation: isolate;
+  margin: auto;
 }
 
 
@@ -519,7 +520,7 @@ h1 {
 
 @keyframes popIn {
   from {
-    transform: translate(-50%, -50%) scale(0.95);
+    transform: translate(-50%, -50%) scale(0.8);
     opacity: 0;
   }
 
