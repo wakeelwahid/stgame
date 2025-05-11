@@ -52,14 +52,17 @@ body {
 }
 
 .num-container {
-  width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(10px, 2vw, 20px);
+  padding: 20px;
   min-height: 100vh;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: #fff;
+
+
 }
+
+
 
 h1 {
   text-align: center;
@@ -126,9 +129,9 @@ h1 {
 
 .number-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  gap: clamp(8px, 1.5vw, 15px);
-  padding: clamp(15px, 2.5vw, 25px);
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+  padding: 25px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   backdrop-filter: blur(15px);
@@ -440,8 +443,9 @@ h1 {
 
 .amount-popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 25%;
+  left: 37%;
+
   transform: translate(-50%, -50%);
   background: rgba(26, 26, 26, 0.98);
   padding: clamp(15px, 4vw, 30px);
@@ -459,6 +463,8 @@ h1 {
   isolation: isolate;
   margin: auto;
 }
+
+
 
 .overlay {
   position: fixed;
@@ -771,52 +777,4 @@ h1 {
 .selected-item.bahar {
   background-color: rgba(139, 0, 0, 0.5);
   border-left: 3px solid red;
-}
-
-.popup-content {
-  background: #1a1a1a;
-  padding: min(25px, 5vw);
-  border-radius: 15px;
-  border: 1px solid var(--neon-blue);
-  width: 100%;
-  text-align: center;
-  position: relative;
-}
-
-.amount-popup h3 {
-  color: var(--neon-blue);
-  font-size: clamp(16px, 4vw, 20px);
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.amount-options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  gap: 10px;
-  margin: 15px 0;
-}
-
-.amount-btn {
-  padding: min(12px, 3vw);
-  font-size: clamp(14px, 3vw, 16px);
-}
-
-.custom-amount input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  font-size: clamp(14px, 3vw, 16px);
-}
-
-.popup-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.popup-btn {
-  flex: 1;
-  padding: min(12px, 3vw);
-  font-size: clamp(14px, 3vw, 16px);
 }

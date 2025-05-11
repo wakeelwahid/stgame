@@ -234,6 +234,7 @@ return (
       </div>
       
       {showPopup && (
+        <div className="popupfix">
         <div className="amount-popup">
           <h3>Select Amount for Number <span>{currentSelection?.number}</span></h3>
           <div className="amount-options">
@@ -271,6 +272,7 @@ return (
             </button>
           </div>
         </div>
+          </div>
       )}
       
       {showPopup && <div className="overlay"></div>}
