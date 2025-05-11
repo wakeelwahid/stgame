@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ct%(g*h0_p1-rt2h+g4oc4y!$tipv_&8!^nht7t1rh07_25r3)
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '2c1b45eb-cc47-408e-a8b0-5dc9f0345e26-00-3o4k29s7xdybb.sisko.replit.dev'
+    '*', '2c1b45eb-cc47-408e-a8b0-5dc9f0345e26-00-3o4k29s7xdybb.sisko.replit.dev'
 ]
 
 # Application definition
