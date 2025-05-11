@@ -4,6 +4,7 @@ modules = ["nodejs-20", "web", "python-3.12", "python-with-prybar-3.10", "pyrigh
 channel = "stable-24_05"
 
 [workflows]
+runButton = "Run"
 
 [[workflows.workflow]]
 name = "Dev Backend"
@@ -13,3 +14,25 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "cd backend && python manage.py runserver 0.0.0.0:8000"
+
+[[workflows.workflow]]
+name = "Dev Frontend"
+author = 42554831
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd frontend && npm install && npm run dev"
+
+[[workflows.workflow]]
+name = "Run"
+author = 42554831
+mode = "parallel"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd backend && python manage.py runserver 0.0.0.0:8000"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd frontend && npm install && npm run dev"
